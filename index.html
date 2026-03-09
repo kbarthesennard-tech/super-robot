@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vérifiez votre éligibilité pour une pompe à chaleur financée à 100% grâce aux aides de l'État (MaPrimeRénov', CEE). Reste à charge pouvant être nul selon conditions.">
+    <title>Pompe à Chaleur - Vérifiez votre Éligibilité Gratuitement</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Pompe à Chaleur : <span class="highlight">Reste à Charge 0€ Possible</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Financement pouvant aller jusqu'à 100% selon éligibilité (revenus, logement, travaux)
+                </p>
+                <div class="hero-badges">
+                    <div class="badge">
+                        <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>Aides Encadrées</span>
+                    </div>
+                    <div class="badge">
+                        <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                        <span>Artisans RGE</span>
+                    </div>
+                    <div class="badge">
+                        <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>0€ à Avancer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Anti-Arnaque Section -->
+    <section class="anti-scam">
+        <div class="container">
+            <h2 class="section-title">⚠️ Méfiez-vous des Arnaques</h2>
+            <div class="scam-warning">
+                <p><strong>REFUSEZ si on vous dit :</strong></p>
+                <ul class="scam-list">
+                    <li>❌ « Mandaté par l'État »</li>
+                    <li>❌ « Signez tout de suite »</li>
+                    <li>❌ « Gratuit pour tout le monde »</li>
+                </ul>
+                <p class="scam-info">
+                    <svg class="info-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    Le démarchage non sollicité en rénovation énergétique est <strong>interdit par la loi</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comment Ça Marche Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Comment Ça Marche ?</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Vérification Gratuite</h3>
+                    <p>Remplissez le formulaire ci-dessous (2 minutes)</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Étude de Dossier</h3>
+                    <p>Nous analysons votre éligibilité aux aides (MaPrimeRénov', CEE)</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Devis Transparent</h3>
+                    <p>Si éligible, devis écrit avec aides déduites</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Installation RGE</h3>
+                    <p>Travaux réalisés par artisan certifié</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulaire d'Éligibilité -->
+    <section class="form-section" id="formulaire">
+        <div class="container">
+            <h2 class="section-title">Vérifiez Votre Éligibilité</h2>
+            <p class="form-intro">
+                Gratuit • Sans engagement • Réponse sous 24h
+            </p>
+
+            <form id="form-eligibilite" class="eligibility-form">
+                <!-- Type de Logement -->
+                <div class="form-group">
+                    <label for="type-logement">Vous êtes :</label>
+                    <select id="type-logement" name="typeLogement" required>
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="proprietaire-occupant">Propriétaire occupant</option>
+                        <option value="proprietaire-bailleur">Propriétaire bailleur</option>
+                        <option value="locataire">Locataire</option>
+                    </select>
+                </div>
+
+                <!-- Type de Résidence -->
+                <div class="form-group">
+                    <label for="type-residence">Type de résidence :</label>
+                    <select id="type-residence" name="typeResidence" required>
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="maison">Maison individuelle</option>
+                        <option value="appartement">Appartement</option>
+                    </select>
+                </div>
+
+                <!-- Ancienneté du Logement -->
+                <div class="form-group">
+                    <label for="anciennete">Ancienneté du logement :</label>
+                    <select id="anciennete" name="anciennete" required>
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="moins-2-ans">Moins de 2 ans</option>
+                        <option value="2-15-ans">Entre 2 et 15 ans</option>
+                        <option value="plus-15-ans">Plus de 15 ans</option>
+                    </select>
+                </div>
+
+                <!-- Système de Chauffage Actuel -->
+                <div class="form-group">
+                    <label for="chauffage-actuel">Système de chauffage actuel :</label>
+                    <select id="chauffage-actuel" name="chauffageActuel" required>
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="fioul">Chaudière fioul</option>
+                        <option value="gaz">Chaudière gaz</option>
+                        <option value="electrique">Radiateurs électriques</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <!-- Nombre de Personnes -->
+                <div class="form-group">
+                    <label for="nb-personnes">Nombre de personnes dans le foyer :</label>
+                    <select id="nb-personnes" name="nbPersonnes" required>
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="1">1 personne</option>
+                        <option value="2">2 personnes</option>
+                        <option value="3">3 personnes</option>
+                        <option value="4">4 personnes</option>
+                        <option value="5+">5 personnes ou plus</option>
+                    </select>
+                </div>
+
+                <!-- Revenu Fiscal de Référence -->
+                <div class="form-group">
+                    <label for="revenu">Revenu fiscal de référence (RFR) :</label>
+                    <select id="revenu" name="revenu" required>
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="tres-modeste">Très modeste</option>
+                        <option value="modeste">Modeste</option>
+                        <option value="intermediaire">Intermédiaire</option>
+                        <option value="superieur">Supérieur</option>
+                        <option value="ne-sais-pas">Je ne sais pas</option>
+                    </select>
+                </div>
+
+                <!-- Code Postal -->
+                <div class="form-group">
+                    <label for="code-postal">Code postal :</label>
+                    <input type="text" id="code-postal" name="codePostal" pattern="[0-9]{5}" placeholder="ex: 75001" required>
+                </div>
+
+                <!-- Informations de Contact -->
+                <div class="form-group">
+                    <label for="nom">Nom complet :</label>
+                    <input type="text" id="nom" name="nom" placeholder="Prénom Nom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telephone">Téléphone :</label>
+                    <input type="tel" id="telephone" name="telephone" pattern="[0-9]{10}" placeholder="0612345678" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" placeholder="votre@email.fr" required>
+                </div>
+
+                <!-- Consentement RGPD -->
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rgpd" name="rgpd" required>
+                        <span>J'accepte d'être recontacté pour étudier mon éligibilité. Mes données sont traitées conformément au <a href="#mentions-legales">RGPD</a>.</span>
+                    </label>
+                </div>
+
+                <!-- Bouton de Soumission -->
+                <button type="submit" class="btn-submit">
+                    <span class="btn-text">Vérifier Mon Éligibilité</span>
+                    <span class="btn-loader" style="display: none;">
+                        <svg class="spinner" viewBox="0 0 24 24">
+                            <circle class="spinner-circle" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle>
+                        </svg>
+                    </span>
+                </button>
+
+                <!-- Message de Confirmation -->
+                <div id="form-message" class="form-message" style="display: none;"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Garanties Section -->
+    <section class="guarantees">
+        <div class="container">
+            <h2 class="section-title">Nos Garanties</h2>
+            <div class="guarantee-grid">
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">📋</div>
+                    <h3>Devis Écrit</h3>
+                    <p>Tout doit être écrit : prix, aides déduites, reste à charge</p>
+                </div>
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">🔍</div>
+                    <h3>RGE Vérifié</h3>
+                    <p>Artisan certifié RGE (annuaire officiel France Rénov')</p>
+                </div>
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">🚫</div>
+                    <h3>Zéro Crédit Caché</h3>
+                    <p>Pas de prêt déguisé dans les documents</p>
+                </div>
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">⏱️</div>
+                    <h3>Zéro Pression</h3>
+                    <p>Pas de « signature immédiate » exigée</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Questions Fréquentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>C'est vraiment 0€ pour tout le monde ?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Non. Le reste à charge peut être nul <strong>selon votre éligibilité</strong> (revenus, logement, nature des travaux). C'est pourquoi nous vérifions d'abord votre situation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Quelles sont les aides disponibles ?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Les principales aides sont :</p>
+                        <ul>
+                            <li><strong>MaPrimeRénov'</strong> : aide de l'État selon revenus (de 3 000€ à 11 000€ pour une PAC)</li>
+                            <li><strong>Primes CEE</strong> : primes des fournisseurs d'énergie</li>
+                            <li><strong>TVA réduite</strong> : 5,5% au lieu de 20%</li>
+                            <li><strong>Éco-PTZ</strong> : prêt à taux zéro (jusqu'à 50 000€)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Dois-je avancer l'argent ?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Selon votre dossier, les aides peuvent être <strong>déduites directement du devis</strong>, sans avance de frais. C'est un des points que nous étudions lors de la vérification d'éligibilité.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Comment vérifier qu'un artisan est RGE ?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Consultez l'annuaire officiel sur <a href="https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte" target="_blank" rel="noopener">france-renov.gouv.fr</a>. Exigez un justificatif délivré par un organisme agréé.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentions Légales Section -->
+    <section class="legal" id="mentions-legales">
+        <div class="container">
+            <h2 class="section-title">Mentions Légales & RGPD</h2>
+            <div class="legal-content">
+                <h3>Traitement des Données Personnelles</h3>
+                <p>
+                    Les données collectées via ce formulaire sont traitées pour étudier votre éligibilité aux aides à la rénovation énergétique et vous recontacter. 
+                    Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition. 
+                    Pour exercer ces droits, contactez-nous à : <strong>contact@votre-entreprise.fr</strong>
+                </p>
+                
+                <h3>Avertissement</h3>
+                <p>
+                    Les informations fournies sur ce site sont données à titre indicatif. Le financement à 100% est possible uniquement selon conditions d'éligibilité 
+                    (revenus, logement, nature des travaux) et règles en vigueur. Aucune promesse de financement ne peut être faite sans étude préalable de votre dossier.
+                </p>
+
+                <h3>Sources Officielles</h3>
+                <ul>
+                    <li><a href="https://france-renov.gouv.fr/aides/maprimerenov" target="_blank" rel="noopener">MaPrimeRénov' - France Rénov'</a></li>
+                    <li><a href="https://france-renov.gouv.fr/aides/cee" target="_blank" rel="noopener">Aides CEE - France Rénov'</a></li>
+                    <li><a href="https://www.economie.gouv.fr/particuliers/faire-des-economies-denergie/renovation-energetique-nos-conseils-pour-eviter-les-arnaques" target="_blank" rel="noopener">Éviter les arnaques - Ministère de l'Économie</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 - Pompe à Chaleur Éligibilité. Tous droits réservés.</p>
+            <p class="footer-disclaimer">
+                Site indépendant - Non affilié à France Rénov' ou au gouvernement
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
