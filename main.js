@@ -1,6 +1,14 @@
 // ========================================
 // Gestion du Formulaire + Tracking (Google Ads + Meta)
 // ========================================
+const CONFIG = {
+  webhookURL: "/.netlify/functions/lead",
+  messages: {
+    validation: "Merci de compléter tous les champs obligatoires.",
+    success: "Merci ! Votre demande a bien été envoyée.",
+    error: "Erreur lors de l’envoi. Merci de réessayer."
+  }
+};
 
 // IDs tracking
 const TRACKING = {
