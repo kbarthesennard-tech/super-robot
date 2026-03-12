@@ -73,17 +73,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     try {
       // Envoyer les données au webhook
-      await fetch(CONFIG.webhookURL, {
-        method: 'POST',
-        mode: 'no-cors', // Apps Script => réponse opaque
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
+      const resp = await fetch(CONFIG.webhookURL, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(formData)
+});
 
-      // IMPORTANT :
-      // En no-cors, on ne peut pas lire response.ok.
-      // Donc: si fetch ne lève pas d'exception => on déclenche les conversions.
-      trackLeadConversionsOnce();
+const result = await resp.json();
+
+// ✅ On track uniquement si le proxy dit ok:true
+if (!resp.ok || result.ok !== true) {
+  throw new Error('Proxy not OK: ' + JSON.stringify(result));
+}
+
+trackLeadConversionsOnce();
 
       showMessage(CONFIG.messages.success, 'success');
       form.reset();
