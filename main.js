@@ -73,22 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     try {
       // Envoyer les données au webhook
-      const resp = await fetch(CONFIG.webhookURL: "/.netlify/functions/lead"
-, {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(formData)
-});
-
-const result = await resp.json();
-
-// ✅ On track uniquement si le proxy dit ok:true
-if (!resp.ok || result.ok !== true) {
-  throw new Error('Proxy not OK: ' + JSON.stringify(result));
-}
-
-trackLeadConversionsOnce();
-
+      undefined
       showMessage(CONFIG.messages.success, 'success');
       form.reset();
 
