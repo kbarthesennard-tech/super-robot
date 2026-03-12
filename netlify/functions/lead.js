@@ -1,33 +1,38 @@
 // netlify/functions/lead.js
-export default async (request) => {
-  // CORS
-  const corsHeaders = {
+
+exports.handler = async (event) => {
+  const headers = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Content-Type": "application/json",
   };
 
-  if (request.method === "OPTIONS") {
-    return new Response("", { status: 204, headers: corsHeaders });
+  // Préflight CORS
+  if (event.httpMethod === "OPTIONS") {
+    return { statusCode: 204, headers, body: "" };
   }
 
-  if (request.method !== "POST") {
-    return new Response(JSON.stringify({ ok: false, error: "Method not allowed" }), {
-      status: 405,
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
-    });
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      headers,
+      body: JSON.stringify({ ok: false, error: "Method not allowed" }),
+    };
   }
 
   try {
     const appsScriptUrl = process.env.APPS_SCRIPT_URL;
     if (!appsScriptUrl) {
-      return new Response(JSON.stringify({ ok: false, error: "Missing APPS_SCRIPT_URL env var" }), {
-        status: 500,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      return {
+        statusCode: 500,
+        headers,
+        body: JSON.stringify({ ok: false, error: "Missing APPS_SCRIPT_URL env var" }),
+      };
     }
 
-    const payload = await request.json();
+    // body arrive en string
+    const payload = event.body ? JSON.parse(event.body) : {};
 
     const upstreamResp = await fetch(appsScriptUrl, {
       method: "POST",
@@ -36,27 +41,26 @@ export default async (request) => {
     });
 
     const upstreamText = await upstreamResp.text();
-
     let upstreamJson = null;
     try { upstreamJson = JSON.parse(upstreamText); } catch (e) {}
 
-    const ok = upstreamResp.ok && (upstreamJson?.ok === true);
+    // On considère OK uniquement si HTTP 2xx ET upstreamJson.ok === true
+    const ok = upstreamResp.ok && upstreamJson && upstreamJson.ok === true;
 
-    return new Response(
-      JSON.stringify({
+    return {
+      statusCode: ok ? 200 : 502,
+      headers,
+      body: JSON.stringify({
         ok,
         upstreamStatus: upstreamResp.status,
         upstream: upstreamJson ?? upstreamText,
       }),
-      {
-        status: ok ? 200 : 502,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      }
-    );
+    };
   } catch (err) {
-    return new Response(JSON.stringify({ ok: false, error: String(err) }), {
-      status: 500,
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
-    });
+    return {
+      statusCode: 500,
+      headers,
+      body: JSON.stringify({ ok: false, error: String(err) }),
+    };
   }
 };
