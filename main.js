@@ -73,7 +73,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     try {
       // Envoyer les données au webhook
-      const resp = await fetch(CONFIG.webhookURL, {
+      const resp = await fetch(CONFIG.webhookURL: "/.netlify/functions/lead"
+, {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(formData)
